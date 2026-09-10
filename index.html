@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SidShali.love — Shaadi Not Found</title>
+
+  <meta
+    name="description"
+    content="The domain is final. Baaki sab under construction."
+  />
+
+  <meta property="og:title" content="SidShali.love — Shaadi Not Found" />
+  <meta
+    property="og:description"
+    content="Venue? Not found. Lehenga? Not found. Love? Found."
+  />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --ivory: #f8f3ea;
+      --paper: #fbf8f1;
+      --ink: #2c211d;
+      --muted: #796c64;
+      --wine: #722f3e;
+      --wine-dark: #4d202b;
+      --gold: #b3935a;
+      --line: rgba(114, 47, 62, 0.16);
+      --white: rgba(255, 255, 255, 0.58);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 20;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+    }
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(255, 255, 255, 0.95),
+          transparent 48%
+        ),
+        var(--ivory);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 760px;
+      height: 760px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero::after {
+      width: 590px;
+      height: 590px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.7;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(900px, 100%);
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--wine);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 34px;
+      animation: fadeUp 1s ease both;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "✦";
+      font-size: 9px;
+      color: var(--gold);
+    }
+
+    .names {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(72px, 13vw, 150px);
+      line-height: 0.78;
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      color: var(--wine-dark);
+      animation: fadeUp 1s 0.12s ease both;
+    }
+
+    .names .amp {
+      font-family: "Italianno", cursive;
+      font-size: 0.48em;
+      color: var(--gold);
+      margin: 0 0.03em;
+      vertical-align: 0.06em;
+      font-weight: 400;
+    }
+
+    .domain {
+      margin-top: 30px;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: lowercase;
+      color: var(--muted);
+      animation: fadeUp 1s 0.22s ease both;
+    }
+
+    .domain span {
+      color: var(--wine);
+    }
+
+    .status-card {
+      width: min(560px, 100%);
+      margin: 58px auto 0;
+      padding: 32px 34px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+      box-shadow:
+        0 24px 80px rgba(77, 32, 43, 0.07),
+        0 2px 8px rgba(77, 32, 43, 0.03);
+      animation: fadeUp 1s 0.35s ease both;
+    }
+
+    .error-code {
+      font-family: "DM Sans", sans-serif;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .status-title {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--wine-dark);
+      font-size: clamp(38px, 6vw, 54px);
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .status-copy {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .scroll-hint {
+      margin-top: 54px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      animation: float 2.5s ease-in-out infinite;
+    }
+
+    .scroll-hint::after {
+      content: "↓";
+      display: block;
+      margin-top: 10px;
+      font-size: 16px;
+      color: var(--gold);
+    }
+
+    .intro {
+      padding: 130px 24px;
+      text-align: center;
+      background: var(--paper);
+      position: relative;
+    }
+
+    .section-inner {
+      width: min(760px, 100%);
+      margin: auto;
+    }
+
+    .tiny-label {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .intro h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(44px, 7vw, 72px);
+      line-height: 0.95;
+      font-weight: 500;
+      color: var(--wine-dark);
+      margin-bottom: 30px;
+    }
+
+    .intro h2 em {
+      font-family: "Italianno", cursive;
+      font-weight: 400;
+      color: var(--gold);
+    }
+
+    .intro p {
+      max-width: 590px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .intro p strong {
+      color: var(--wine);
+      font-weight: 600;
+    }
+
+    .planning {
+      padding: 120px 24px;
+      background: var(--ivory);
+    }
+
+    .planning-header {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .planning-header h2 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--wine-dark);
+      font-size: clamp(42px, 7vw, 64px);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .planning-header p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 14px;
+    }
+
+    .checklist {
+      width: min(760px, 100%);
+      margin: auto;
+      border-top: 1px solid var(--line);
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 50px 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 23px 4px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .item-number {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .item-name {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--wine-dark);
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .item-status {
+      font-size: 10px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .item.done .item-status {
+      color: var(--wine);
+      border-color: rgba(114, 47, 62, 0.3);
+    }
+
+    .item.done .item-status::before {
+      content: "✓ ";
+      color: var(--gold);
+    }
+
+    .item.pending .item-status::before {
+      content: "○ ";
+      color: var(--gold);
+    }
+
+    .punchline {
+      min-height: 75svh;
+      padding: 100px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--wine-dark);
+      color: var(--ivory);
+    }
+
+    .punchline::before {
+      content: "LOVE";
+      position: absolute;
+      font-family: "Cormorant Garamond", serif;
+      font-size: min(40vw, 500px);
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.025);
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .punchline-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .punchline .tiny-label {
+      color: #d2b878;
+    }
+
+    .punchline h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(52px, 9vw, 105px);
+      line-height: 0.88;
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      max-width: 850px;
+    }
+
+    .punchline h2 em {
+      font-family: "Italianno", cursive;
+      color: #d2b878;
+      font-weight: 400;
+    }
+
+    .punchline p {
+      margin-top: 30px;
+      color: rgba(248, 243, 234, 0.68);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .coming {
+      padding: 125px 24px 145px;
+      text-align: center;
+      background: var(--paper);
+    }
+
+    .coming h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(46px, 8vw, 82px);
+      font-weight: 500;
+      line-height: 0.95;
+      color: var(--wine-dark);
+    }
+
+    .coming .script {
+      font-family: "Italianno", cursive;
+      color: var(--gold);
+      font-size: 1.15em;
+    }
+
+    .coming-copy {
+      max-width: 530px;
+      margin: 30px auto 0;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+    }
+
+    .coming-copy strong {
+      color: var(--wine);
+    }
+
+    .signature {
+      margin-top: 55px;
+      font-family: "Italianno", cursive;
+      font-size: 48px;
+      color: var(--wine);
+    }
+
+    footer {
+      padding: 28px 24px;
+      background: var(--ivory);
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    footer .heart {
+      color: var(--wine);
+      font-size: 15px;
+    }
+
+    .flower {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .flower svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: var(--wine);
+      stroke-width: 0.8;
+    }
+
+    .flower-left {
+      left: -35px;
+      bottom: 10%;
+      transform: rotate(-18deg);
+    }
+
+    .flower-right {
+      right: -35px;
+      top: 14%;
+      transform: rotate(35deg);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(7px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 100svh;
+        padding: 40px 18px;
+      }
+
+      .hero::before {
+        width: 570px;
+        height: 570px;
+      }
+
+      .hero::after {
+        width: 450px;
+        height: 450px;
+      }
+
+      .status-card {
+        margin-top: 48px;
+        padding: 27px 22px;
+      }
+
+      .intro,
+      .planning {
+        padding: 90px 20px;
+      }
+
+      .item {
+        grid-template-columns: 35px 1fr;
+        gap: 8px 12px;
+      }
+
+      .item-status {
+        grid-column: 2;
+        width: fit-content;
+      }
+
+      .item-name {
+        font-size: 22px;
+      }
+
+      .punchline {
+        min-height: 65svh;
+        padding: 90px 20px;
+      }
+
+      .coming {
+        padding: 95px 20px 110px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="hero">
+
+    <div class="flower flower-left">
+      <svg viewBox="0 0 150 150">
+        <path d="M75 145 C72 110 72 70 75 5" />
+        <path d="M75 105 C48 100 30 83 22 60 C45 62 63 75 75 92" />
+        <path d="M75 82 C103 76 120 58 127 37 C103 42 86 55 75 70" />
+        <path d="M75 58 C57 47 48 32 49 16 C65 22 74 35 75 48" />
+        <circle cx="75" cy="8" r="5" />
+      </svg>
+    </div>
+
+    <div class="flower flower-right">
+      <svg viewBox="0 0 150 150">
+        <path d="M75 145 C72 110 72 70 75 5" />
+        <path d="M75 105 C48 100 30 83 22 60 C45 62 63 75 75 92" />
+        <path d="M75 82 C103 76 120 58 127 37 C103 42 86 55 75 70" />
+        <path d="M75 58 C57 47 48 32 49 16 C65 22 74 35 75 48" />
+        <circle cx="75" cy="8" r="5" />
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+
+      <div class="eyebrow">
+        An invitation to something
+      </div>
+
+      <h2 class="names">
+        Sidharth<span class="amp">&</span>Vaishali
+      </h2>
+
+      <div class="domain">
+        <span>sidshali</span>.love
+      </div>
+
+      <div class="status-card">
+
+        <div class="error-code">
+          Error 404 · Shaadi Not Found
+        </div>
+
+        <h2 class="status-title">
+          Abhi thoda time hai.
+        </h2>
+
+        <p class="status-copy">
+          Venue? Not found.<br />
+          Lehenga? Not final.<br />
+          Sherwani? God knows.<br />
+          Date? Let's not talk about it.<br /><br />
+
+          <strong>But domain?</strong> Domain mil gaya. ❤️
+        </p>
+
+      </div>
+
+      <div class="scroll-hint">
+        scroll for more unnecessary information
+      </div>
+
+    </div>
+  </main>
+
+
+  <section class="intro">
+
+    <div class="section-inner">
+
+      <div class="tiny-label">
+        Welcome to the prelude
+      </div>
+
+      <h2>
+        Shaadi toh <em>hogi.</em><br />
+        Bas planning abhi baaki hai.
+      </h2>
+
+      <p>
+        Technically, this is a wedding website.
+        Practically, <strong>abhi wedding hi final nahi hui.</strong>
+        <br /><br />
+
+        So instead of pretending ki sab kuch sorted hai,
+        we thought — let's document the one thing
+        that somehow got finalized first.
+        <br /><br />
+
+        <strong>Humara domain.</strong>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="planning">
+
+    <div class="planning-header">
+
+      <div class="tiny-label">
+        Current wedding status
+      </div>
+
+      <h2>
+        Things we have<br />
+        definitely figured out.
+      </h2>
+
+      <p>
+        Spoiler: zyada kuch nahi.
+      </p>
+
+    </div>
+
+
+    <div class="checklist">
+
+      <div class="item done">
+        <div class="item-number">01</div>
+        <div class="item-name">Domain</div>
+        <div class="item-status">Done</div>
+      </div>
+
+      <div class="item pending">
+        <div class="item-number">02</div>
+        <div class="item-name">Wedding Date</div>
+        <div class="item-status">Pending</div>
+      </div>
+
+      <div class="item pending">
+        <div class="item-number">03</div>
+        <div class="item-name">Venue</div>
+        <div class="item-status">Pending</div>
+      </div>
+
+      <div class="item pending">
+        <div class="item-number">04</div>
+        <div class="item-name">Lehenga</div>
+        <div class="item-status">Pending</div>
+      </div>
+
+      <div class="item pending">
+        <div class="item-number">05</div>
+        <div class="item-name">Sherwani</div>
+        <div class="item-status">Pending</div>
+      </div>
+
+      <div class="item pending">
+        <div class="item-number">06</div>
+        <div class="item-name">Catering</div>
+        <div class="item-status">Pending</div>
+      </div>
+
+      <div class="item pending">
+        <div class="item-number">07</div>
+        <div class="item-name">Decor</div>
+        <div class="item-status">Pending</div>
+      </div>
+
+      <div class="item pending">
+        <div class="item-number">08</div>
+        <div class="item-name">Actually Planning the Wedding</div>
+        <div class="item-status">Pending</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="punchline">
+
+    <div class="punchline-inner">
+
+      <div class="tiny-label">
+        One thing is confirmed
+      </div>
+
+      <h2>
+        Everything is<br />
+        <em>under construction.</em>
+      </h2>
+
+      <p>
+        Except the love story.<br />
+        Woh kaafi time se production mein hai.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="coming">
+
+    <div class="tiny-label">
+      The actual invitation
+    </div>
+
+    <h2>
+      Coming <span class="script">eventually.</span>
+    </h2>
+
+    <p class="coming-copy">
+
+      Jab venue mil jayega.<br />
+      Jab date decide ho jayegi.<br />
+      Jab outfits final ho jayenge.<br />
+      Jab families ko bata diya jayega ki
+      <strong>haan, actually ab shaadi hai.</strong>
+      <br /><br />
+
+      Tab yahan proper invitation hoga.
+      Events honge. Photos hongi. Maps honge.
+      RSVP hoga. Maybe thoda drama bhi.
+      <br /><br />
+
+      <strong>For now, you've reached the earliest possible version.</strong>
+
+    </p>
+
+    <div class="signature">
+      — Sidharth & Vaishali
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <span>
+      sidshali.love
+    </span>
+
+    <span class="heart">
+      ♡
+    </span>
+
+    <span>
+      Made before the wedding was planned
+    </span>
+
+  </footer>
+
+
+</body>
+</html>
+```
